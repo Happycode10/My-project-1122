@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>biggest among numbers</title>
+  <style>
+    body{
+      background: linear-gradient(to right,#A2DC47,#52CFC7,#8D67CB)
+    }
+    .box{
+      margin: auto;
+      margin-top: 160px;
+      width: 400px;
+      height: 400px;
+    }
+    h1{
+      text-align: center;
+      text-transform: uppercase;
+    }
+    h2{
+      text-align: center;
+    }
+    .form{
+      box-shadow: 0px 0px 3px #7A7C8E;
+      background: white;
+      padding: 30px;
+      width: 400px;
+      height: 400px;
+      margin-top: 160px;
+      overflow: scroll;
+    }
+    .text{
+      font-size: 30px;
+    }
+    #form1,#form2,#form3,#form4{
+      position: absolute;
+      top: 30px;
+    }
+    #form1{
+      z-index: 5;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+    .form input.input {
+      height: 30px;
+    }
+    .psub{
+      margin-left: 20%; 
+    }
+    .sub{
+      font-size: 20px;
+      text-align: center;
+      width: 100px;
+      background: #5CC849;
+      margin-left: 20px;
+    }
+    .t_b{
+      position: relative;
+      left: 25%;
+      width: 100px;
+      margin-left: 20px;
+      font-size: 20px;
+      padding: 5px;
+    }
+    .t_b:hover{
+      background: #237CFF;
+      color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h2>BIGGEST OF :</h2>
+  <button type="submit" onclick="b1()" id="indexcg"  class="t_b">2 NUMBERS</button>
+  <button type="submit" onclick="b2()" id="indexcg"  class="t_b">3 NUMBERS</button>
+  <button type="submit" onclick="b3()" id="indexcg"  class="t_b">4 NUMBERS</button>
+  <button type="submit" onclick="b4()" id="indexcg"  class="t_b">5 NUMBERS</button>
+  
+  <div class="box">
+    
+    <div class="form" id="form1">
+      <h1>biggest of 2 numbers</h1>
+      <form action="">
+        <span class="text">A</span>
+        <input type="text" class="input" id="f1a" placeholder="Enter A value">
+        <span class="text">B</span>
+        <input type="text" class="input" id="f1b" placeholder="Enter B value">
+        <span class="psub">
+          <button type="button" class="sub" onclick="b1ot()">SUBMIT</button>
+        <input type="RESET" class="sub" value="RESET">
+        </span>
+        
+        <input type="text" class="input" id="res-f1" disabled>
+      </form>
+    </div>
+    
+    <div class="form" id="form2">
+      <h1>biggest of 3 numbers</h1>
+      <form action="">
+        <span class="text">A</span>
+        <input type="text" class="input" id="f2a" placeholder="Enter A value">
+        <span class="text">B</span>
+        <input type="text" class="input" id="f2b" placeholder="Enter B value">
+        <span class="text">C</span>
+        <input type="text" class="input" id="f2c" placeholder="Enter C value">
+        <span class="psub">
+          <button type="button" class="sub" onclick="b2ot()">SUBMIT</button>
+          <input type="RESET" class="sub" value="RESET">
+        </span>
+        <input type="text" class="input" id="res-f2" disabled>
+      </form>
+    </div>
+    
+    <div class="form" id="form3">
+      <h1>biggest of 4 numbers</h1>
+      <form action="">
+        <span class="text">A</span>
+        <input type="text" class="input" id="f3a" placeholder="Enter A value">
+        <span class="text">B</span>
+        <input type="text" class="input" id="f3b" placeholder="Enter B value">
+        <span class="text">C</span>
+        <input type="text" class="input" id="f3c" placeholder="Enter C value">
+        <span class="text">D</span>
+        <input type="text" class="input" id="f3d" placeholder="Enter D value">
+        <span class="psub">
+          <button type="button" class="sub" onclick="b3ot()">SUBMIT</button>
+          <input type="RESET" class="sub" value="RESET">
+        </span>
+        <input type="text" class="input" id="res-f3" disabled>
+      </form>
+    </div>
+    
+    <div class="form" id="form4">
+      <h1>biggest of 5 numbers</h1>
+      <form action="">
+        <span class="text">A</span>
+        <input type="text" class="input" id="f4a" placeholder="Enter A value">
+        <span class="text">B</span>
+        <input type="text" class="input" id="f4b" placeholder="Enter B value">
+        <span class="text">C</span>
+        <input type="text" class="input" id="f4c" placeholder="Enter C value">
+        <span class="text">D</span>
+        <input type="text" class="input" id="f4d" placeholder="Enter D value">
+        <span class="text">E</span>
+        <input type="text" class="input" id="f4e" placeholder="Enter E value">
+        <span class="psub">
+          <button type="button" class="sub" onclick="b4ot()">SUBMIT</button>
+          <input type="RESET" class="sub" value="RESET">
+        </span>
+        <input type="text" class="input" id="res-f4" disabled>
+        </div>
+      </form>
+    
+  </div>
+  <script>
+    function b1ot() {
+        var a1 = document.getElementById("f1a").value;
+        var b1 = document.getElementById("f1b").value;
+        var biggest_num = a1 > b1 ? a1 : b1;
+        var resultElement = document.getElementById("res-f1");
+        resultElement.value = biggest_num + " is the bigger number";
+      }
+ 
+    function b2ot(){
+        var a2 = document.getElementById("f2a").value;
+        var b2 = document.getElementById("f2b").value;
+        var c2 = document.getElementById("f2c").value;
+        var biggest_num = (a2>b2) && (a2>c2) ? a2 : (b2>a2) && (b2>c2) ? b2 : c2
+        var resultElement = document.getElementById("res-f2");
+        resultElement.value = biggest_num + " is the bigger number";
+      }
+      
+    function b3ot(){
+        var a3 = document.getElementById("f3a").value;
+        var b3 = document.getElementById("f3b").value;
+        var c3 = document.getElementById("f3c").value;
+        var d3 = document.getElementById("f3d").value;
+        var biggest_num = ((a3 > b3 && a3 > c3) && (a3 > d3)) ? a3: ((b3 > a3 && b3 > c3) && (b3 > d3)) ? b3 : ((c3 > a3 && c3 > b3) && (c3 > d3)) ? c3 : d3
+        // var biggest_num = ((a3>b3) && (a3>c3)) && (a3>d3) ? a3 : ((b3>a3) && (b3>c3)) && (b3>d3) ? b3 : ((c3>a3) && (c3>b3)) && (c3>d3) ? c3 : d3
+        var resultElement = document.getElementById("res-f3");
+        resultElement.value = biggest_num + " is the bigger number";
+      }
+      
+    function b4ot(){
+        var a4 = document.getElementById("f4a").value;
+        var b4 = document.getElementById("f4b").value;
+        var c4 = document.getElementById("f4c").value;
+        var d4 = document.getElementById("f4d").value;
+        var e4 = document.getElementById("f4e").value;
+        var biggest_num = ((a4>b4) && (a4>c4)) && ((a4>d4) && (a4>e4)) ? a4 : ((b4>a4) && (b4>c4)) && ((b4>d4) && (b4>e4)) ? b4 : ((c4>a4) && (c4>b4)) && ((c4>d4) && (c4>e4)) ? c4 : ((d4>a4) && (d4>b4)) && ((d4>c4) && (d4>e4)) ? d4 : e4
+        var resultElement = document.getElementById("res-f4");
+        resultElement.value = biggest_num + " is the bigger number";
+      }
+  
+    function b1(){
+      document.getElementById('form1').style.zIndex =  '4';
+      document.getElementById('form2').style.zIndex =  '3';
+      document.getElementById('form3').style.zIndex = '2';
+      document.getElementById('form4').style.zIndex = '1';
+    }
+    function b2(){
+      document.getElementById('form2').style.zIndex =  '4';
+      document.getElementById('form1').style.zIndex =  '3';
+      document.getElementById('form3').style.zIndex = '2';
+      document.getElementById('form4').style.zIndex = '1';
+    }
+    function b3() {
+      document.getElementById('form3').style.zIndex = '4';
+      document.getElementById('form2').style.zIndex = '3';
+      document.getElementById('form1').style.zIndex = '2';
+      document.getElementById('form4').style.zIndex = '1';
+    }
+    
+    function b4() {
+      document.getElementById('form4').style.zIndex = '4';
+      document.getElementById('form1').style.zIndex = '3';
+      document.getElementById('form3').style.zIndex = '2';
+      document.getElementById('form2').style.zIndex = '1';
+    }
+  </script>
+</body>
+</html>
